@@ -34,7 +34,7 @@ desvio_features << 0.0787428, 0.07602341, 0.12433794;
 *   [Extension PlatformIO IDE](https://platformio.org/install/ide?install=vscode)
 *   [Git](https://git-scm.com/)
 
-Para este projeto, foi utilizado o **PlatformIO (Extensão do Visual Studio Code)** em vez da IDE padrão do Arduino, devido a problemas de compatibilidade de bibliotecas.
+> Para este projeto, foi utilizado o **PlatformIO (Extensão do Visual Studio Code)** em vez da IDE padrão do Arduino, devido a problemas de compatibilidade de bibliotecas.
 ---
 
 ## Como instalar e abrir o projeto
