@@ -2,7 +2,7 @@
 
 Este repositório contém o firmware para o monitor de pressão arterial baseado em ESP32, utilizando **TensorFlow Lite for Microcontrollers**. O sistema processa sinais de PPG (sensor MAX30102) a 400Hz e realiza a predição de pressão sistólica e diastólica em tempo real.
 
-> **Status do Modelo:** O projeto já inclui um modelo pré-treinado e funcional. Se desejar entender como o treinamento foi realizado ou treinar com seus próprios dados, acesse o repositório de treinamento: **[Pipeline de IA - BP Prediction](https://github.com/erickmasson/Treinamento_MLP.git)**.
+> **Status do Modelo:** O projeto já inclui um modelo pré-treinado e funcional. Se desejar entender como o treinamento foi realizado ou treinar com seus próprios dados, acesse o repositório de treinamento: **[Pipeline de Inteligência Artificial - Predição de Pressão Arterial](https://github.com/erickmasson/Treinamento_MLP.git)**.
 
 ---
 
