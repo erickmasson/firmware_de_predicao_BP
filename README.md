@@ -19,13 +19,30 @@ modelo = tflite::GetModel(ann_MLP_3F_tflite);
 *Caso mude o nome da array no arquivo `.h` ao usar o comando `xxd`, este campo deve ser atualizado.*
 
 ### 2. Parâmetros de Normalização (`PreditorPressaoArterial_ESP32.cpp`)
-A rede neural exige que os dados de entrada estejam na mesma escala usada no treinamento (Z-Score). Os valores de **Média** e **Desvio Padrão** gerados na **Etapa 2** do treinamento devem ser inseridos no construtor da classe:
-```cpp
-// Valores exatos gerados pelo script Python (Etapa 2)
-media_features << 0.28579714, 0.20255669, 0.38727512;
-desvio_features << 0.0787428, 0.07602341, 0.12433794;
+
+A rede neural exige que os dados de entrada estejam na mesma escala usada no treinamento (**Z-Score**). Os valores de **Média** e **Desvio Padrão** devem ser inseridos no construtor da classe no arquivo `.cpp`.
+
+Se você utilizar o **[Pipeline de IA - Predição de Pressão Arterial](https://github.com/erickmasson/Treinamento_MLP.git)** para treinar um novo modelo, ao final da **Etapa 2**, o seguinte trecho aparecerá no seu console:
+
+```text
+--- Parâmetros de Normalização (Média e Desvio) ---
+Valores de 'media_features' (scaler.mean_):
+[0.28491937, 0.20810303, 0.38521455]
+
+Valores de 'desvio_features' (scaler.scale_):
+[0.08426185, 0.08558355, 0.13107274]
+--------------------------------------------------
 ```
 
+Estes são os valores exatos que você deve atualizar no arquivo `PreditorPressaoArterial_ESP32.cpp`:
+
+```cpp
+// Substitua pelos valores gerados no seu treinamento:
+media_features << 0.28491937, 0.20810303, 0.38521455;
+desvio_features << 0.08426185, 0.08558355, 0.13107274;
+```
+
+> **Atenção:** Se esses valores não coincidirem com o modelo carregado no `model_data.h`, as predições de pressão arterial serão incorretas.
 ---
 
 ## Pré-requisitos
